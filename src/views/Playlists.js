@@ -1,0 +1,171 @@
+/* eslint jsx-a11y/anchor-is-valid: 0 */
+
+import React from "react";
+import {
+  Container,
+  Row,
+  Col,
+  Card,
+  CardBody,
+  CardFooter,
+  Badge,
+  Button
+} from "shards-react";
+
+import PageTitle from "../components/common/PageTitle";
+
+class Playlists extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      // First list of posts.
+      PostsListOne: [
+        {
+          backgroundImage: require("../images/content-management/1.jpeg"),
+          category: "Calm",
+          categoryTheme: "green",
+          author: "Anna Kunis",
+          authorAvatar: require("../images/avatars/1.jpg"),
+          title: "Playlists Name",
+          body: [{trackName: 'Song 1', artistName: 'John Doe', trackDuration: '3:26'}, {trackName: 'Song 2', artistName: 'John Doe', trackDuration: '3:04'}, {trackName: 'Song 1', artistName: 'John Doe', trackDuration: '3:54'}, {trackName: 'Song 1', artistName: 'John Doe', trackDuration: '2:06'}],
+          date: "28 February 2019"
+        },
+        {
+          backgroundImage: require("../images/content-management/2.jpeg"),
+          category: "Energized",
+          categoryTheme: "warning",
+          author: "James Jamerson",
+          authorAvatar: require("../images/avatars/2.jpg"),
+          title: "Off tears are day blind smile alone had ready",
+          body: [{trackName: 'Song 1', artistName: 'John Doe', trackDuration: '3:01'}, {trackName: 'Song 2', artistName: 'John Doe', trackDuration: '3:06'}, {trackName: 'Song 1', artistName: 'John Doe', trackDuration: '3:04'}, {trackName: 'Song 1', artistName: 'John Doe', trackDuration: '3:04'}],
+          date: "29 February 2019"
+        },
+        {
+          backgroundImage: require("../images/content-management/3.jpeg"),
+          category: "Relaxed",
+          categoryTheme: "royal-blue",
+          author: "Jimmy Jackson",
+          authorAvatar: require("../images/avatars/2.jpg"),
+          title: "Difficult in delivered extensive at direction",
+          body: [{trackName: 'Song 1', artistName: 'John Doe', trackDuration: '1:24'}, {trackName: 'Song 2', artistName: 'John Doe', trackDuration: '2:44'}, {trackName: 'Song 1', artistName: 'John Doe', trackDuration: '2:06'}, {trackName: 'Song 1', artistName: 'John Doe', trackDuration: '4:05'}],
+          date: "29 February 2019"
+        },
+        {
+          backgroundImage: require("../images/content-management/4.jpeg"),
+          category: "Happy",
+          categoryTheme: "magenta",
+          author: "John James",
+          authorAvatar: require("../images/avatars/3.jpg"),
+          title: "It so numerous if he may outlived disposal",
+          body: [{trackName: 'Song 1', artistName: 'John Doe', trackDuration: '2:45'}, {trackName: 'Song 2', artistName: 'John Doe', trackDuration: '3:16'}, {trackName: 'Song 1', artistName: 'John Doe', trackDuration: '3:04'}, {trackName: 'Song 1', artistName: 'John Doe', trackDuration: '3:54'}],
+          date: "29 February 2019"
+        },
+        {
+          backgroundImage: require("../images/content-management/5.jpeg"),
+          category: "Peaceful",
+          categoryTheme: "info",
+          author: "Anna Kunis",
+          authorAvatar: require("../images/avatars/1.jpg"),
+          title: "Conduct at an replied removal an amongst",
+          body: [{trackName: 'Song 1', artistName: 'John Doe', trackDuration: '3:04'}, {trackName: 'Song 2', artistName: 'John Doe', trackDuration: '2:32'}, {trackName: 'Song 1', artistName: 'John Doe', trackDuration: '3:12'}, {trackName: 'Song 1', artistName: 'John Doe', trackDuration: '3:04'}],
+          date: "28 February 2019"
+        },
+        {
+          backgroundImage: require("../images/content-management/6.jpeg"),
+          category: "Greateful",
+          categoryTheme: "purple",
+          author: "James Jamerson",
+          authorAvatar: require("../images/avatars/2.jpg"),
+          title: "Off tears are day blind smile alone had ready",
+          body: [{trackName: 'Song 1', artistName: 'John Doe', trackDuration: '3:04'}, {trackName: 'Song 2', artistName: 'John Doe', trackDuration: '3:36'}, {trackName: 'Song 1', artistName: 'John Doe', trackDuration: '1:41'}, {trackName: 'Song 1', artistName: 'John Doe', trackDuration: '3:22'}],
+          date: "29 February 2019"
+        },
+        {
+          backgroundImage: require("../images/content-management/7.jpeg"),
+          category: "Happy",
+          categoryTheme: "magenta",
+          author: "Jimmy Jackson",
+          authorAvatar: require("../images/avatars/2.jpg"),
+          title: "Difficult in delivered extensive at direction",
+          body: [{trackName: 'Song 1', artistName: 'John Doe', trackDuration: '3:02'}, {trackName: 'Song 2', artistName: 'John Doe', trackDuration: '3:04'}, {trackName: 'Song 1', artistName: 'John Doe', trackDuration: '3:04'}, {trackName: 'Song 1', artistName: 'John Doe', trackDuration: '3:09'}],
+          date: "29 February 2019"
+        },
+        {
+          backgroundImage: require("../images/content-management/8.jpeg"),
+          category: "Energized",
+          categoryTheme: "warning",
+          author: "John James",
+          authorAvatar: require("../images/avatars/3.jpg"),
+          title: "It so numerous if he may outlived disposal",
+          body: [{trackName: 'Song 1', artistName: 'John Doe', trackDuration: '2:00'}, {trackName: 'Song 2', artistName: 'John Doe', trackDuration: '3:24'}, {trackName: 'Song 3', artistName: 'John Doe', trackDuration: '3:04'}, {trackName: 'Song 4', artistName: 'John Doe', trackDuration: '3:30'}],
+          date: "29 February 2019"
+        }
+      ]
+    };
+  }
+
+  render() {
+    const {
+      PostsListOne,
+    } = this.state;
+
+    return (
+      <Container fluid className="main-content-container px-4">
+        {/* Page Header */}
+        <Row noGutters className="page-header py-4">
+          <PageTitle sm="4" title="Playlists" subtitle="" className="text-sm-left" />
+        </Row>
+
+        {/* First Row of Posts */}
+        <Row>
+          {PostsListOne.map((post, idx) => (
+            <Col lg="3" md="6" sm="12" className="mb-4" key={idx}>
+              <Card small className="card-post card-post--1">
+                <div
+                  className="card-post__image"
+                  style={{ backgroundImage: `url(${post.backgroundImage})` }}
+                >
+                  <Badge
+                    pill
+                    className={`card-post__category bg-${post.categoryTheme}`}
+                  >
+                    {post.category}
+                  </Badge>
+                  <div className="card-post__author d-flex">
+                    <a
+                      href="#"
+                      className="card-post__author-avatar card-post__author-avatar--small"
+                      style={{ backgroundImage: `url('${post.authorAvatar}')` }}
+                    >
+                      Written by {post.author}
+                    </a>
+                  </div>
+                </div>
+          <CardBody className="p-0 pb-3 mt-5">
+            <table className="table mb-0">
+              <tbody>
+              { Object.keys(post.body).map( (item, idx) => (
+                <tr key={idx}>
+                  <td>{post.body[item].trackName}</td>
+                  <td style={{flex: 2}}>{post.body[item].artistName}</td>
+                  <td></td>
+                  <td >{post.body[item].trackDuration}</td>
+                </tr>
+              ))
+              }
+              </tbody>
+            </table>
+          </CardBody>
+              </Card>
+            </Col>
+          ))}
+        </Row>
+
+
+      </Container>
+    );
+  }
+}
+
+export default Playlists;

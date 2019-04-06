@@ -10,7 +10,7 @@ import NewDraft from "./../components/blog/NewDraft";
 import Discussions from "./../components/blog/Discussions";
 import TopReferrals from "./../components/common/TopReferrals";
 
-const BlogOverview = ({ smallStats }) => (
+const Dashboard = ({ smallStats }) => (
   <Container fluid className="main-content-container px-4">
     {/* Page Header */}
     <Row noGutters className="page-header py-4">
@@ -48,68 +48,32 @@ const BlogOverview = ({ smallStats }) => (
       </Col>
 
       {/* New Draft */}
-      <Col lg="4" md="6" sm="12" className="mb-4">
+      <Col lg="4" md="6" sm="12" className="mb-4" style={{display: 'none'}}>
         <NewDraft />
       </Col>
 
       {/* Discussions */}
-      <Col lg="5" md="12" sm="12" className="mb-4">
+      <Col lg="5" md="12" sm="12" className="mb-4" style={{display: 'none'}}>
         <Discussions />
       </Col>
 
       {/* Top Referrals */}
-      <Col lg="3" md="12" sm="12" className="mb-4">
+      <Col lg="3" md="12" sm="12" className="mb-4" style={{display: 'none'}}>
         <TopReferrals />
       </Col>
     </Row>
   </Container>
 );
 
-BlogOverview.propTypes = {
+Dashboard.propTypes = {
   /**
    * The small stats dataset.
    */
   smallStats: PropTypes.array
 };
 
-BlogOverview.defaultProps = {
+Dashboard.defaultProps = {
   smallStats: [
-    {
-      label: "Posts",
-      value: "2,390",
-      percentage: "4.7%",
-      increase: true,
-      chartLabels: [null, null, null, null, null, null, null],
-      attrs: { md: "6", sm: "6" },
-      datasets: [
-        {
-          label: "Today",
-          fill: "start",
-          borderWidth: 1.5,
-          backgroundColor: "rgba(0, 184, 216, 0.1)",
-          borderColor: "rgb(0, 184, 216)",
-          data: [1, 2, 1, 3, 5, 4, 7]
-        }
-      ]
-    },
-    {
-      label: "Pages",
-      value: "182",
-      percentage: "12.4",
-      increase: true,
-      chartLabels: [null, null, null, null, null, null, null],
-      attrs: { md: "6", sm: "6" },
-      datasets: [
-        {
-          label: "Today",
-          fill: "start",
-          borderWidth: 1.5,
-          backgroundColor: "rgba(23,198,113,0.1)",
-          borderColor: "rgb(23,198,113)",
-          data: [1, 2, 3, 3, 3, 4, 4]
-        }
-      ]
-    },
     {
       label: "Comments",
       value: "8,147",
@@ -130,11 +94,11 @@ BlogOverview.defaultProps = {
       ]
     },
     {
-      label: "New Customers",
+      label: "New Users",
       value: "29",
       percentage: "2.71%",
-      increase: false,
-      decrease: true,
+      increase: true,
+      decrease: false,
       chartLabels: [null, null, null, null, null, null, null],
       attrs: { md: "4", sm: "6" },
       datasets: [
@@ -152,8 +116,8 @@ BlogOverview.defaultProps = {
       label: "Subscribers",
       value: "17,281",
       percentage: "2.4%",
-      increase: false,
-      decrease: true,
+      increase: true,
+      decrease: false,
       chartLabels: [null, null, null, null, null, null, null],
       attrs: { md: "4", sm: "6" },
       datasets: [
@@ -170,4 +134,4 @@ BlogOverview.defaultProps = {
   ]
 };
 
-export default BlogOverview;
+export default Dashboard;

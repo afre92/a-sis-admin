@@ -5,13 +5,13 @@ import { Redirect } from "react-router-dom";
 import { DefaultLayout } from "./layouts";
 
 // Route Views
-import BlogOverview from "./views/BlogOverview";
-import UserProfileLite from "./views/UserProfileLite";
+import Dashboard from "./views/Dashboard";
+import UserProfile from "./views/UserProfileLite";
 import AddNewPost from "./views/AddNewPost";
 import Errors from "./views/Errors";
 import ComponentsOverview from "./views/ComponentsOverview";
 import Tables from "./views/Tables";
-import BlogPosts from "./views/BlogPosts";
+import Playlists from "./views/Playlists";
 
 export default [
   {
@@ -21,17 +21,17 @@ export default [
     component: () => <Redirect to="/blog-overview" />
   },
   {
-    path: "/blog-overview",
+    path: "/dashboard",
     layout: DefaultLayout,
-    component: BlogOverview
+    component: Dashboard
   },
   {
-    path: "/user-profile-lite",
+    path: "/users",
     layout: DefaultLayout,
-    component: UserProfileLite
+    component: UserProfile
   },
   {
-    path: "/add-new-post",
+    path: "/images",
     layout: DefaultLayout,
     component: AddNewPost
   },
@@ -41,7 +41,7 @@ export default [
     component: Errors
   },
   {
-    path: "/components-overview",
+    path: "/settings",
     layout: DefaultLayout,
     component: ComponentsOverview
   },
@@ -51,8 +51,8 @@ export default [
     component: Tables
   },
   {
-    path: "/blog-posts",
+    path: "/playlists",
     layout: DefaultLayout,
-    component: BlogPosts
+    component: Playlists
   }
 ];
