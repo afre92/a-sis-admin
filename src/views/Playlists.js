@@ -3,7 +3,13 @@
 import React from "react";
 import {
   Container,
+  CardHeader,
+  ListGroup,
+  ListGroupItem,
   Row,
+  Form,
+  FormGroup,
+  FormInput,
   Col,
   Card,
   CardBody,
@@ -114,13 +120,28 @@ class Playlists extends React.Component {
       <Container fluid className="main-content-container px-4">
         {/* Page Header */}
         <Row noGutters className="page-header py-4">
-          <PageTitle sm="4" title="Playlists" subtitle="" className="text-sm-left" />
+          <PageTitle sm="10" title="Playlists" subtitle="" className="text-sm-left" />
+                
+                   <a href="/new-playlist" ><p className="p-0" style={{fontSize: 20}}> New Playlist<i class="material-icons" style={{fontSize: 25, top: '6px'}}>add</i></p>
+                     
+                    </a>
+                
         </Row>
 
         {/* First Row of Posts */}
         <Row>
           {PostsListOne.map((post, idx) => (
             <Col lg="3" md="6" sm="12" className="mb-4" key={idx}>
+              <div style={{width: '100%'}}>
+              <div>
+                <a href="#" onClick={console.log('dlete')}> 
+                  <i class="material-icons" style={{fontSize: 22}}>edit</i>
+                </a>
+                <a href="#">
+                  <i class="material-icons" style={{fontSize: 22}}>delete_forever</i>
+                </a>
+              </div>
+              </div>
               <Card small className="card-post card-post--1">
                 <div
                   className="card-post__image"
@@ -147,10 +168,12 @@ class Playlists extends React.Component {
               <tbody>
               { Object.keys(post.body).map( (item, idx) => (
                 <tr key={idx}>
-                  <td>{post.body[item].trackName}</td>
-                  <td style={{flex: 2}}>{post.body[item].artistName}</td>
+                  <td style={{paddingLeft: '20px'}}>{post.body[item].trackName} <br/>
+                    <p className="p-0 m-0" style={{fontSize: 'smaller', color: 'grey'}}>{post.body[item].artistName}</p>
+                  </td>
+                  <td style={{flex: 2}}></td>
                   <td></td>
-                  <td >{post.body[item].trackDuration}</td>
+                  <td style={{textAlign: 'right', paddingRight: '20px', paddingTop: '20px', paddingBottom: '20px'}}>{post.body[item].trackDuration}</td>
                 </tr>
               ))
               }

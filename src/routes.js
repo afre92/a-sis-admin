@@ -6,6 +6,7 @@ import { DefaultLayout } from "./layouts";
 
 // Route Views
 import Dashboard from "./views/Dashboard";
+import NewPlaylist from "./views/NewPlaylist";
 import UserProfile from "./views/UserProfileLite";
 import AddNewPost from "./views/AddNewPost";
 import Errors from "./views/Errors";
@@ -54,5 +55,10 @@ export default [
     path: "/playlists",
     layout: DefaultLayout,
     component: Playlists
+  },
+  {
+    path: "/new-playlist",
+    layout: DefaultLayout,
+    component: NewPlaylist
   }
 ];
