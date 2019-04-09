@@ -16,6 +16,7 @@ import Playlists from "./views/Playlists";
 import Users from "./views/Users";
 import NewUser from "./views/NewUser";
 import EditUser from "./views/EditUser";
+import Images from "./views/Images";
 
 export default [
   {
@@ -37,7 +38,7 @@ export default [
   {
     path: "/images",
     layout: DefaultLayout,
-    component: AddNewPost
+    component: Images
   },
   {
     path: "/errors",

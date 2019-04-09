@@ -1,0 +1,116 @@
+/* eslint jsx-a11y/anchor-is-valid: 0 */
+
+import React from "react";
+import {
+  Container,
+  CardHeader,
+  ListGroup,
+  ListGroupItem,
+  Row,
+  Form,
+  FormGroup,
+  FormInput,
+  Col,
+  Card,
+  CardBody,
+  CardFooter,
+  Badge,
+  Button
+} from "shards-react";
+
+import PageTitle from "../components/common/PageTitle";
+
+class Images extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      // First list of posts.
+      PostsListOne: [
+        {
+          backgroundImage: require("../images/content-management/8.jpeg"),
+        },
+        {
+          backgroundImage: require("../images/content-management/6.jpeg"),
+
+        },
+        {
+          backgroundImage: require("../images/content-management/3.jpeg"),
+        },
+        {
+          backgroundImage: require("../images/content-management/4.jpeg"),
+        },
+        {
+          backgroundImage: require("../images/content-management/5.jpeg"),
+        },
+        {
+          backgroundImage: require("../images/content-management/6.jpeg"),
+        },
+        {
+          backgroundImage: require("../images/content-management/2.jpeg"),
+        },
+        {
+          backgroundImage: require("../images/content-management/8.jpeg"),
+        },
+        {
+          backgroundImage: require("../images/content-management/1.jpeg"),
+        }
+      ]
+    };
+  }
+
+  render() {
+    const {
+      PostsListOne,
+    } = this.state;
+
+    return (
+      <Container fluid className="main-content-container px-4" >
+        {/* Page Header */}
+        <Row noGutters className="page-header py-4" style={{paddingLeft: '100px', paddingRight: '100px'}}>
+          <PageTitle sm="10" title="Images" subtitle="" className="text-sm-left" />
+                
+                   <a href="/new-playlist" ><p className="p-0" style={{fontSize: 20}}> New Image<i class="material-icons" style={{fontSize: 25, top: '6px'}}>add</i></p>
+                     
+                    </a>
+                
+        </Row>
+
+        {/* First Row of Posts */}
+        <Row style={{paddingLeft: '100px', paddingRight: '100px'}}>
+          {PostsListOne.map((post, idx) => (
+            <Col lg="4" md="6" sm="12" className="mb-4" key={idx}>
+              <div style={{width: '100%'}}>
+              <div>
+                <a href="#" onClick={console.log('dlete')}> 
+                  <i class="material-icons" style={{fontSize: 22}}>edit</i>
+                </a>
+                <a href="#">
+                  <i class="material-icons" style={{fontSize: 22}}>delete_forever</i>
+                </a>
+              </div>
+              </div>
+              <Card small className="card-post card-post--1">
+                <div
+                  className="card-post__image"
+                  style={{ backgroundImage: `url(${post.backgroundImage})` }}
+                >
+                  <Badge
+                    pill
+                    className={`card-post__category bg-${post.categoryTheme}`}
+                  >
+                    {post.category}
+                  </Badge>
+                </div>
+              </Card>
+            </Col>
+          ))}
+        </Row>
+
+
+      </Container>
+    );
+  }
+}
+
+export default Images;

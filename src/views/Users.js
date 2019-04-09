@@ -158,10 +158,10 @@ class Users extends React.Component {
                 <Row style={{fontSize: 'larger', fontWeight: 'bold'}}>
                   {user.name}
                 </Row>
-                <Row style={{color: 'grey'}}>
+                <Row style={{color: 'grey', fontWeight: 200}}>
                   {user.jobTitle}
                 </Row>
-                <Row style={{color: 'grey'}}>
+                <Row style={{color: 'grey', fontWeight: 200}}>
                   Mobile: {user.phoneNumber}
                 </Row>
               </Col>
