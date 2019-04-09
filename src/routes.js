@@ -17,6 +17,7 @@ import Users from "./views/Users";
 import NewUser from "./views/NewUser";
 import EditUser from "./views/EditUser";
 import Images from "./views/Images";
+import NewImage from "./views/NewImage";
 
 export default [
   {
@@ -39,6 +40,11 @@ export default [
     path: "/images",
     layout: DefaultLayout,
     component: Images
+  },
+  {
+    path: "/new-image",
+    layout: DefaultLayout,
+    component: NewImage
   },
   {
     path: "/errors",

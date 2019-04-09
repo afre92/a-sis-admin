@@ -118,7 +118,7 @@ class Users extends React.Component {
     } = this.state;
 
     return (
-      <Container fluid className="main-content-container py-4" style={{paddingLeft: '8rem'}}>
+      <Container fluid className="main-content-container" style={{paddingLeft: '8rem'}}>
         {/* Page Header */}
         <Row noGutters className="page-header py-4">
           <PageTitle sm="9" title="Users" subtitle="" className="text-sm-left" />       
