@@ -15,6 +15,7 @@ import Tables from "./views/Tables";
 import Playlists from "./views/Playlists";
 import Users from "./views/Users";
 import NewUser from "./views/NewUser";
+import EditUser from "./views/EditUser";
 
 export default [
   {
@@ -28,11 +29,11 @@ export default [
     layout: DefaultLayout,
     component: Dashboard
   },
-  // {
-  //   path: "/users",
-  //   layout: DefaultLayout,
-  //   component: UserProfile
-  // },
+  {
+    path: "/edit-user",
+    layout: DefaultLayout,
+    component: EditUser
+  },
   {
     path: "/images",
     layout: DefaultLayout,

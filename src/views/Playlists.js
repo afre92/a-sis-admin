@@ -106,6 +106,16 @@ class Playlists extends React.Component {
           title: "It so numerous if he may outlived disposal",
           body: [{trackName: 'Song 1', artistName: 'John Doe', trackDuration: '2:00'}, {trackName: 'Song 2', artistName: 'John Doe', trackDuration: '3:24'}, {trackName: 'Song 3', artistName: 'John Doe', trackDuration: '3:04'}, {trackName: 'Song 4', artistName: 'John Doe', trackDuration: '3:30'}],
           date: "29 February 2019"
+        },
+        {
+          backgroundImage: require("../images/content-management/2.jpeg"),
+          category: "Energized",
+          categoryTheme: "warning",
+          author: "John James",
+          authorAvatar: require("../images/avatars/3.jpg"),
+          title: "It so numerous if he may outlived disposal",
+          body: [{trackName: 'Song 1', artistName: 'John Doe', trackDuration: '2:00'}, {trackName: 'Song 2', artistName: 'John Doe', trackDuration: '3:24'}, {trackName: 'Song 3', artistName: 'John Doe', trackDuration: '3:04'}, {trackName: 'Song 4', artistName: 'John Doe', trackDuration: '3:30'}],
+          date: "29 February 2019"
         }
       ]
     };
@@ -117,9 +127,9 @@ class Playlists extends React.Component {
     } = this.state;
 
     return (
-      <Container fluid className="main-content-container px-4">
+      <Container fluid className="main-content-container px-4" >
         {/* Page Header */}
-        <Row noGutters className="page-header py-4">
+        <Row noGutters className="page-header py-4" style={{paddingLeft: '100px', paddingRight: '100px'}}>
           <PageTitle sm="10" title="Playlists" subtitle="" className="text-sm-left" />
                 
                    <a href="/new-playlist" ><p className="p-0" style={{fontSize: 20}}> New Playlist<i class="material-icons" style={{fontSize: 25, top: '6px'}}>add</i></p>
@@ -129,9 +139,9 @@ class Playlists extends React.Component {
         </Row>
 
         {/* First Row of Posts */}
-        <Row>
+        <Row style={{paddingLeft: '100px', paddingRight: '100px'}}>
           {PostsListOne.map((post, idx) => (
-            <Col lg="3" md="6" sm="12" className="mb-4" key={idx}>
+            <Col lg="4" md="6" sm="12" className="mb-4" key={idx}>
               <div style={{width: '100%'}}>
               <div>
                 <a href="#" onClick={console.log('dlete')}> 

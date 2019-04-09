@@ -111,15 +111,6 @@ class Users extends React.Component {
     };
   }
 
-  onDrop(imageFiles) {
-    this.setState({
-        imageFiles: imageFiles
-    })
-    console.log(imageFiles)  
-}
-
-
-
   render() {
 
     const {
@@ -127,19 +118,25 @@ class Users extends React.Component {
     } = this.state;
 
     return (
-      <Container fluid className="main-content-container">
+      <Container fluid className="main-content-container py-4" style={{paddingLeft: '8rem'}}>
         {/* Page Header */}
         <Row noGutters className="page-header py-4">
-          <PageTitle sm="4" title="Users" subtitle="" className="text-sm-left" />
+          <PageTitle sm="9" title="Users" subtitle="" className="text-sm-left" />       
+          <a href="/new-user" >
+            <p className="p-0" style={{fontSize: 20}}> 
+              New User <i class="material-icons" style={{fontSize: 25, top: '6px'}}>add</i>
+            </p>
+          </a>  
         </Row>
 
+
         {/* First Row of Posts */}
-        <div style={{paddingLeft: '8rem', paddingLeft: '8rem'}}>
+        <div >
         {UserList.map((user, idx) => (
-          <Card small className="mb-4 pl-2 pr-2 col-5" style={{display: 'inline-block', marginRight: '5%'}}>
+          <Card small className="mb-4 pl-2 pr-2 col-md-5" style={{display: 'inline-block', marginRight: '5%'}}>
             <CardHeader className="border-bottom text-center p-0">
             <Row className="mb-3">
-            <Col md="3">
+            <Col md="3" sm="12">
               <div className="mt-3 mx-auto">
                 <img
                   className="rounded-circle"
@@ -149,9 +146,9 @@ class Users extends React.Component {
                 />
               </div>
               </Col>
-              <Col md="9" className=" pb-2">
+              <Col md="9" sm="12" className=" pb-2">
                 <div style={{textAlign: 'right', paddingRight: '20px', paddingTop: '5px'}}>
-                  <a href="#" style={{paddingRight: '20px'}}>
+                  <a href="/edit-user" style={{paddingRight: '20px'}}>
                     <i class="material-icons" style={{fontSize: 25, top: '6px'}}>edit</i>
                   </a>
                   <a href="#">
@@ -175,16 +172,16 @@ class Users extends React.Component {
                 <div style={{textAlign: 'center'}}>
                 <Row>
                   <Col className="py-2">
-                    <FaInstagram style={{fontSize: 20, color: '#ccc'}}/>
+                    <a href="#"><FaInstagram style={{fontSize: 20, color: '#ccc'}}/></a>
                   </Col>
                   <Col className="py-2">
-                    <FaFacebook style={{fontSize: 20, color: '#ccc'}}/>
+                    <a href="#"><FaFacebook style={{fontSize: 20, color: '#ccc'}}/></a>
                   </Col>
                   <Col className="py-2">
-                    <FaTwitter style={{fontSize: 20, color: '#ccc'}}/>
+                    <a href="#"><FaTwitter style={{fontSize: 20, color: '#ccc'}}/></a>
                   </Col>
                   <Col className="py-2">
-                    <FaEnvelope style={{fontSize: 20, color: '#ccc'}}/>
+                    <a href="#"><FaEnvelope style={{fontSize: 20, color: '#ccc'}}/></a>
                   </Col>
                 </Row>
                 </div>
