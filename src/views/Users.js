@@ -24,7 +24,7 @@ import CustomFileUpload from "../components/components-overview/CustomFileUpload
 import PageTitle from "../components/common/PageTitle";
 import UserDetails from "../components/user-profile-lite/UserDetails";
 import { FaEnvelope, FaInstagram, FaFacebook, FaTwitter } from 'react-icons/fa';
-
+import Pagination from "react-js-pagination";
 
 
 class Users extends React.Component {
