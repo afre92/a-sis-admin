@@ -13,6 +13,8 @@ import Errors from "./views/Errors";
 import ComponentsOverview from "./views/ComponentsOverview";
 import Tables from "./views/Tables";
 import Playlists from "./views/Playlists";
+import Users from "./views/Users";
+import NewUser from "./views/NewUser";
 
 export default [
   {
@@ -26,11 +28,11 @@ export default [
     layout: DefaultLayout,
     component: Dashboard
   },
-  {
-    path: "/users",
-    layout: DefaultLayout,
-    component: UserProfile
-  },
+  // {
+  //   path: "/users",
+  //   layout: DefaultLayout,
+  //   component: UserProfile
+  // },
   {
     path: "/images",
     layout: DefaultLayout,
@@ -60,5 +62,15 @@ export default [
     path: "/new-playlist",
     layout: DefaultLayout,
     component: NewPlaylist
+  },
+  {
+    path: "/users",
+    layout: DefaultLayout,
+    component: Users
+  },
+  {
+    path: "/new-user",
+    layout: DefaultLayout,
+    component: NewUser
   }
 ];
