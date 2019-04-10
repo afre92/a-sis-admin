@@ -24,21 +24,7 @@ import CustomFileUpload from "../components/components-overview/CustomFileUpload
 import PageTitle from "../components/common/PageTitle";
 import Dropzone from 'react-dropzone';
 
-const baseStyle = {
-  flex: 1,
-  display: 'flex',
-  flexDirection: 'column',
-  alignItems: 'center',
-  padding: '40px',
-  borderWidth: 2,
-  borderRadius: 2,
-  borderColor: '#eeeeee',
-  borderStyle: 'dashed',
-  backgroundColor: '#fafafa',
-  color: '#bdbdbd',
-  outline: 'none',
-  transition: 'border .24s ease-in-out'
-};
+
 
 class NewUser extends React.Component {
 

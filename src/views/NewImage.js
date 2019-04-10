@@ -29,17 +29,17 @@ const baseStyle = {
   display: 'flex',
   flexDirection: 'column',
   alignItems: 'center',
-  padding: '40px',
+  paddingTop: '60px',
+  paddingBottom: '80px',
   borderWidth: 2,
   borderRadius: 2,
-  borderColor: '#eeeeee',
+  borderColor: '#b3d9ff',
   borderStyle: 'dashed',
-  backgroundColor: '#fafafa',
-  color: '#bdbdbd',
+  backgroundColor: '#e6f2ff',
+  color: '#4da6ff',
   outline: 'none',
   transition: 'border .24s ease-in-out'
 };
-
 class NewImage extends React.Component {
 
  
@@ -90,7 +90,9 @@ class NewImage extends React.Component {
                               {({getRootProps, getInputProps}) => (
                                 <div {...getRootProps()} style={baseStyle}>
                                   <input {...getInputProps()} />
-                                  Click me to upload a file!
+                                  <i class="material-icons" style={{fontSize: 30}}>cloud_upload</i>
+                                  <span style={{fontSize: 30, color: '#737373'}}>Drag & Drop </span>
+                                  <p className="m-0">your files, or <span style={{fontWeight: 'bold', color: '#0080ff', cursor:' pointer', textDecoration: 'underline' }}>browse</span></p>
                                 </div>
                               )}
                             </Dropzone>
