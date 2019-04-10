@@ -70,9 +70,12 @@ class Images extends React.Component {
         <Row noGutters className="page-header py-4" style={{paddingLeft: '100px', paddingRight: '100px'}}>
           <PageTitle sm="10" title="Images List" subtitle="Images" className="text-sm-left" />
                 
-                   <a href="/new-image" ><p className="p-0" style={{fontSize: 20}}> New Image<i class="material-icons" style={{fontSize: 25, top: '6px'}}>add</i></p>
-                     
-                    </a>
+           <a href="/new-image" >
+            <p className="p-0" style={{fontSize: 20}}> 
+              <i class="material-icons" style={{fontSize: 25, top: '6px'}}>add</i> New Image
+              </p>
+             
+            </a>
                 
         </Row>
 

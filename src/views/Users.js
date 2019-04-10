@@ -124,7 +124,7 @@ class Users extends React.Component {
           <PageTitle sm="9" title="Users List" subtitle="Users" className="text-sm-left" />       
           <a href="/new-user" >
             <p className="p-0" style={{fontSize: 20}}> 
-              New User <i class="material-icons" style={{fontSize: 25, top: '6px'}}>add</i>
+              <i class="material-icons" style={{fontSize: 25, top: '6px'}}>add</i> New User 
             </p>
           </a>  
         </Row>
