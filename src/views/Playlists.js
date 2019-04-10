@@ -130,7 +130,7 @@ class Playlists extends React.Component {
       <Container fluid className="main-content-container px-4" >
         {/* Page Header */}
         <Row noGutters className="page-header py-4" style={{paddingLeft: '100px', paddingRight: '100px'}}>
-          <PageTitle sm="10" title="Playlists" subtitle="" className="text-sm-left" />
+          <PageTitle sm="10" title="Playlist List" subtitle="Playlists" className="text-sm-left" />
                 
                    <a href="/new-playlist" ><p className="p-0" style={{fontSize: 20}}> New Playlist<i class="material-icons" style={{fontSize: 25, top: '6px'}}>add</i></p>
                      
@@ -142,15 +142,15 @@ class Playlists extends React.Component {
         <Row style={{paddingLeft: '100px', paddingRight: '100px'}}>
           {PostsListOne.map((post, idx) => (
             <Col lg="4" md="6" sm="12" className="mb-4" key={idx}>
-              <div style={{width: '100%'}}>
-              <div>
-                <a href="#" onClick={console.log('dlete')}> 
-                  <i class="material-icons" style={{fontSize: 22}}>edit</i>
-                </a>
-                <a href="#">
-                  <i class="material-icons" style={{fontSize: 22}}>delete_forever</i>
-                </a>
-              </div>
+              <div style={{width: '100%', overflow: 'hidden'}}>
+                <span style={{float: 'right'}}>
+                  <a href="#" onClick={console.log('dlete')}> 
+                    <i class="material-icons" style={{fontSize: 25, paddingLeft: '10px'}}>edit</i>
+                  </a>
+                  <a href="#">
+                    <i class="material-icons" style={{fontSize: 25, paddingLeft: '10px'}}>delete_forever</i>
+                  </a>
+                </span>
               </div>
               <Card small className="card-post card-post--1">
                 <div

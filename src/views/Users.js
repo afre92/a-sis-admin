@@ -121,7 +121,7 @@ class Users extends React.Component {
       <Container fluid className="main-content-container" style={{paddingLeft: '8rem'}}>
         {/* Page Header */}
         <Row noGutters className="page-header py-4">
-          <PageTitle sm="9" title="Users" subtitle="" className="text-sm-left" />       
+          <PageTitle sm="9" title="Users List" subtitle="Users" className="text-sm-left" />       
           <a href="/new-user" >
             <p className="p-0" style={{fontSize: 20}}> 
               New User <i class="material-icons" style={{fontSize: 25, top: '6px'}}>add</i>
@@ -147,8 +147,8 @@ class Users extends React.Component {
               </div>
               </Col>
               <Col md="9" sm="12" className=" pb-2">
-                <div style={{textAlign: 'right', paddingRight: '20px', paddingTop: '5px'}}>
-                  <a href="/edit-user" style={{paddingRight: '20px'}}>
+                <div style={{textAlign: 'right', paddingRight: '10px', paddingTop: '5px'}}>
+                  <a href="/edit-user" style={{paddingRight: '10px'}}>
                     <i class="material-icons" style={{fontSize: 25, top: '6px'}}>edit</i>
                   </a>
                   <a href="#">

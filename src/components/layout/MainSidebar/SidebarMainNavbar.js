@@ -28,14 +28,14 @@ class SidebarMainNavbar extends React.Component {
           <NavbarBrand
             className="w-100 mr-0"
             href="#"
-            style={{ lineHeight: "25px", paddingTop: '0px', paddingBottom: '0px', backgroundColor: '#43425c'}}
+            style={{ lineHeight: "25px", paddingTop: '0px', paddingBottom: '0px', backgroundColor: '#fff'}}
           >
             <div className="d-table m-auto">
               <img
                 id="main-logo"
                 style={{ maxWidth: 180 }}
                 className="d-inline-block align-top mr-1"
-                src={require("../../../images/logo4.png")}
+                src={require("../../../images/logo-b.png")}
                 alt="Shards Dashboard"
               />
             </div>
