@@ -135,9 +135,9 @@ class Users extends React.Component {
 
 
         {/* First Row of Posts */}
-        <div >
+        <div style={{textAlign: 'center'}}>
         {UserList.map((user, idx) => (
-          <Card small className="mb-4 pl-2 pr-2 col-md-5" style={{display: 'inline-block', marginRight: '5%'}}>
+          <Card small className="mb-4 pl-2 pr-2 col-md-5 m-3" style={{display: 'inline-block'}}>
             <CardHeader className="border-bottom text-center p-0">
             <Row className="mb-3">
             <Col md="3" sm="12">
