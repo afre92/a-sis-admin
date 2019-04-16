@@ -146,12 +146,15 @@ class Playlists extends React.Component {
                    <a href="/new-playlist" className="orange" ><p className="p-0 " style={{fontSize: 20}}><i class="material-icons" style={{fontSize: 25, top: '6px'}}>add</i> New Playlist</p>
                      
                     </a>
-                
+        <span className="w-100">
+        <NavbarSearch/>        
+        </span>
+
         </Row>
 
         {/* First Row of Posts */}
         <Row style={{paddingLeft: '100px', paddingRight: '100px'}}>
-        <NavbarSearch/>
+        
           {PostsListOne.map((post, idx) => (
             <Col lg="4" md="6" sm="12" className="mb-4" key={idx}>
               <div style={{width: '100%', overflow: 'hidden'}}>
@@ -169,21 +172,6 @@ class Playlists extends React.Component {
                   className="card-post__image"
                   style={{ backgroundImage: `url(${post.backgroundImage})` }}
                 >
-                  <Badge
-                    pill
-                    className={`card-post__category bg-${post.categoryTheme}`}
-                  >
-                    {post.category}
-                  </Badge>
-                  <div className="card-post__author d-flex">
-                    <a
-                      href="#"
-                      className="card-post__author-avatar card-post__author-avatar--small"
-                      style={{ backgroundImage: `url('${post.authorAvatar}')` }}
-                    >
-                      Written by {post.author}
-                    </a>
-                  </div>
                 </div>
           <CardBody className="p-0 mt-4">
 

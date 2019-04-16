@@ -29,6 +29,10 @@
   --font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   --font-family-monospace: "Roboto Mono", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; }
 
+
+
+
+
 @media (max-width: 575.98px) {
   html {
     font-size: 15px; } }
@@ -4635,3 +4639,9 @@ html .ql-toolbar {
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
     min-width: 580px; }
+
+
+
+.w-30 {
+  width: 100% !important;
+}

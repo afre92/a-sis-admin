@@ -25,6 +25,7 @@ import PageTitle from "../components/common/PageTitle";
 import UserDetails from "../components/user-profile-lite/UserDetails";
 import { FaEnvelope, FaInstagram, FaFacebook, FaTwitter } from 'react-icons/fa';
 import Pagination from "react-js-pagination";
+import NavbarSearch from "../components/layout/MainNavbar/NavbarSearch";
 
 
 class Users extends React.Component {
@@ -118,7 +119,7 @@ class Users extends React.Component {
     } = this.state;
 
     return (
-      <Container fluid className="main-content-container" style={{paddingLeft: '8rem'}}>
+      <Container fluid className="main-content-container" >
         {/* Page Header */}
         <Row noGutters className="page-header py-4">
           <PageTitle sm="9" title="Users List" subtitle="Users" className="text-sm-left" />       
@@ -126,7 +127,10 @@ class Users extends React.Component {
             <p className="p-0" style={{fontSize: 20}}> 
               <i class="material-icons" style={{fontSize: 25, top: '6px'}}>add</i> New User 
             </p>
-          </a>  
+          </a>
+          <span className="w-100">
+            <NavbarSearch/>        
+          </span>  
         </Row>
 
 
