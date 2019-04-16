@@ -24,7 +24,7 @@ export default [
     path: "/",
     exact: true,
     layout: DefaultLayout,
-    component: () => <Redirect to="/blog-overview" />
+    component: () => <Redirect to="/dashboard" />
   },
   {
     path: "/dashboard",
@@ -42,7 +42,7 @@ export default [
     component: Images
   },
   {
-    path: "/new-image",
+    path: "/newImage",
     layout: DefaultLayout,
     component: NewImage
   },

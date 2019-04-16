@@ -122,7 +122,7 @@ class Users extends React.Component {
         {/* Page Header */}
         <Row noGutters className="page-header py-4">
           <PageTitle sm="9" title="Users List" subtitle="Users" className="text-sm-left" />       
-          <a href="/new-user" >
+          <a href="/new-user" className="orange">
             <p className="p-0" style={{fontSize: 20}}> 
               <i class="material-icons" style={{fontSize: 25, top: '6px'}}>add</i> New User 
             </p>

@@ -19,6 +19,7 @@ import {
 } from "shards-react";
 
 import PageTitle from "../components/common/PageTitle";
+import NavbarSearch from "../components/layout/MainNavbar/NavbarSearch";
 
 class Playlists extends React.Component {
   constructor(props) {
@@ -138,10 +139,11 @@ class Playlists extends React.Component {
     return (
       <Container fluid className="main-content-container px-4" >
         {/* Page Header */}
+
         <Row noGutters className="page-header py-4" style={{paddingLeft: '100px', paddingRight: '100px'}}>
           <PageTitle sm="10" title="Playlist List" subtitle="Playlists" className="text-sm-left" />
                 
-                   <a href="/new-playlist" ><p className="p-0" style={{fontSize: 20}}><i class="material-icons" style={{fontSize: 25, top: '6px'}}>add</i> New Playlist</p>
+                   <a href="/new-playlist" className="orange" ><p className="p-0 " style={{fontSize: 20}}><i class="material-icons" style={{fontSize: 25, top: '6px'}}>add</i> New Playlist</p>
                      
                     </a>
                 
@@ -149,6 +151,7 @@ class Playlists extends React.Component {
 
         {/* First Row of Posts */}
         <Row style={{paddingLeft: '100px', paddingRight: '100px'}}>
+        <NavbarSearch/>
           {PostsListOne.map((post, idx) => (
             <Col lg="4" md="6" sm="12" className="mb-4" key={idx}>
               <div style={{width: '100%', overflow: 'hidden'}}>
