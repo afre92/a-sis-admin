@@ -16,6 +16,7 @@ import Playlists from "./views/Playlists";
 import Users from "./views/Users";
 import NewUser from "./views/NewUser";
 import EditUser from "./views/EditUser";
+import ShowUser from "./views/ShowUser";
 import Images from "./views/Images";
 import NewImage from "./views/NewImage";
 
@@ -42,7 +43,7 @@ export default [
     component: Images
   },
   {
-    path: "/newImage",
+    path: "/new-image",
     layout: DefaultLayout,
     component: NewImage
   },
@@ -80,5 +81,10 @@ export default [
     path: "/new-user",
     layout: DefaultLayout,
     component: NewUser
+  },
+  {
+    path: "/user",
+    layout: DefaultLayout,
+    component: ShowUser
   }
 ];

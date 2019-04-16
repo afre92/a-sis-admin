@@ -162,7 +162,7 @@ class Users extends React.Component {
                   </a>
                 </div>
                 <Row style={{fontSize: 'larger', fontWeight: 'bold'}}>
-                  {user.name}
+                  <a href="/user" style={{color: '#3D5170'}}>{user.name}</a>
                 </Row>
                 <Row style={{color: 'grey', fontWeight: 200}}>
                   {user.jobTitle}

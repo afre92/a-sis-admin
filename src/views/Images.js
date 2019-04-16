@@ -66,9 +66,9 @@ class Images extends React.Component {
     } = this.state;
 
     return (
-      <Container fluid className="main-content-container px-4" >
+      <Container fluid className="main-content-container" style={{paddingLeft: '7%', paddingRight: '7%'}}>
         {/* Page Header */}
-        <Row noGutters className="page-header py-4" style={{paddingLeft: '100px', paddingRight: '100px'}}>
+        <Row noGutters className="page-header py-4" >
           <PageTitle sm="10" title="Images List" subtitle="Images" className="text-sm-left" />
                 
            <a href="/new-image" className="orange">
@@ -85,7 +85,7 @@ class Images extends React.Component {
         </Row>
 
         {/* First Row of Posts */}
-        <Row style={{paddingLeft: '100px', paddingRight: '100px'}}>
+        <Row>
           {PostsListOne.map((post, idx) => (
             <Col lg="4" md="6" sm="12" className="mb-4" key={idx}>
               <div style={{width: '100%', overflow: 'hidden'}}>

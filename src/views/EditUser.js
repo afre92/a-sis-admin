@@ -61,15 +61,15 @@ class EditUser extends React.Component {
   render() {
 
     return (
-      <Container fluid className="main-content-container px-4">
+      <Container className="main-content-container" style={{paddingLeft: '7%', paddingRight: '7%', height: '100%'}}>
         {/* Page Header */}
         <Row noGutters className="page-header py-4">
-          <PageTitle sm="4" title="Edit User" subtitle="" className="text-sm-left" />
+          <PageTitle sm="4" title="Edit User" subtitle="Users" className="text-sm-left" />
         </Row>
 
         {/* First Row of Posts */}
         <div style={{textAlign: 'center'}}>
-          <Col lg="4" style={{display: 'inline-block'}}>
+          <Col lg="6" style={{display: 'inline-block'}}>
             <Card small className="mb-4">
               <CardHeader className="border-bottom">
                 <h6 className="m-0">User</h6>

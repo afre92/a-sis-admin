@@ -24,9 +24,23 @@ import CustomFileUpload from "../components/components-overview/CustomFileUpload
 import PageTitle from "../components/common/PageTitle";
 import Dropzone from 'react-dropzone';
 
+const baseStyle = {
+  flex: 1,
+  display: 'flex',
+  flexDirection: 'column',
+  alignItems: 'center',
+  padding: '40px',
+  borderWidth: 2,
+  borderRadius: 2,
+  borderColor: '#eeeeee',
+  borderStyle: 'dashed',
+  backgroundColor: '#fafafa',
+  color: '#bdbdbd',
+  outline: 'none',
+  transition: 'border .24s ease-in-out'
+};
 
-
-class NewUser extends React.Component {
+class EditUser extends React.Component {
 
  
   constructor(props) {
@@ -50,7 +64,7 @@ class NewUser extends React.Component {
       <Container className="main-content-container" style={{paddingLeft: '7%', paddingRight: '7%', height: '100%'}}>
         {/* Page Header */}
         <Row noGutters className="page-header py-4">
-          <PageTitle sm="4" title="New User" subtitle="Users" className="text-sm-left" />
+          <PageTitle sm="4" title="Show User" subtitle="Users" className="text-sm-left" />
         </Row>
 
         {/* First Row of Posts */}
@@ -58,7 +72,7 @@ class NewUser extends React.Component {
           <Col lg="6" style={{display: 'inline-block'}}>
             <Card small className="mb-4">
               <CardHeader className="border-bottom">
-                <h6 className="m-0">Create User</h6>
+                <h6 className="m-0">User</h6>
               </CardHeader>
               <ListGroup flush>
                 <ListGroupItem className="p-3">
@@ -70,6 +84,7 @@ class NewUser extends React.Component {
                           <Col md="12" className="form-group">
                             <label htmlFor="feFirstName">First Name</label>
                             <FormInput
+                              value="Sierra"
                               id="feFirstName"
                               onChange={() => {}}
                             />
@@ -81,6 +96,7 @@ class NewUser extends React.Component {
                           <Col md="12" className="form-group">
                             <label htmlFor="feFirstName">Last Name</label>
                             <FormInput
+                              value="Brooks"
                               id="feFirstName"
                               onChange={() => {}}
                             />
@@ -92,6 +108,7 @@ class NewUser extends React.Component {
                           <Col md="12" className="form-group">
                             <label htmlFor="feFirstName">Email</label>
                             <FormInput
+                              value="sierra@email.com"
                               id="feFirstName"
                               onChange={() => {}}
                             />
@@ -132,4 +149,4 @@ class NewUser extends React.Component {
   }
 }
 
-export default NewUser;
+export default EditUser;
