@@ -12,8 +12,13 @@ export default () => (
     <InputGroup seamless className="ml-3">
       <InputGroupAddon type="prepend">
         <InputGroupText>
+          <i className="material-icons">search</i>
         </InputGroupText>
       </InputGroupAddon>
+      <FormInput
+        className="navbar-search"
+        placeholder="Search for something..."
+      />
     </InputGroup>
   </Form>
 );
