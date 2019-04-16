@@ -19,6 +19,7 @@ import {
 } from "shards-react";
 
 import PageTitle from "../components/common/PageTitle";
+import NavbarSearch from "../components/layout/MainNavbar/NavbarSearch";
 
 class Images extends React.Component {
   constructor(props) {
@@ -76,6 +77,10 @@ class Images extends React.Component {
               </p>
              
             </a>
+
+          <span className="w-100">
+            <NavbarSearch className="mr-4"/>        
+          </span>  
                 
         </Row>
 

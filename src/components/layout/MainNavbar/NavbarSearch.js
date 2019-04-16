@@ -9,7 +9,7 @@ import {
 
 export default () => (
   <Form className="main-navbar__search d-none d-md-flex d-lg-flex" style={{width: '30%', float: 'right'}}>
-    <InputGroup seamless className="mr-3">
+    <InputGroup seamless className="">
       <InputGroupAddon type="prepend">
         <InputGroupText>
           <i className="material-icons">search</i>

@@ -121,7 +121,7 @@ class Users extends React.Component {
     return (
       <Container fluid className="main-content-container" >
         {/* Page Header */}
-        <div style={{paddingRight: '5%', paddingLeft: '7%'}}>
+        <div style={{paddingRight: '7%', paddingLeft: '7%'}}>
         <Row noGutters className="page-header py-4">
           <PageTitle sm="10" title="Users List" subtitle="Users" className="text-sm-left" />       
           <a href="/new-user" className="orange">
@@ -130,7 +130,7 @@ class Users extends React.Component {
             </p>
           </a>
           <span className="w-100">
-            <NavbarSearch/>        
+            <NavbarSearch className="mr-4"/>        
           </span>  
         </Row>
         </div>
