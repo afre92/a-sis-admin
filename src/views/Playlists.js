@@ -137,15 +137,15 @@ class Playlists extends React.Component {
     } = this.state;
 
     return (
-      <Container fluid className="main-content-container px-4" >
+      <Container fluid className="main-content-container " style={{paddingLeft: '7%', paddingRight: '7%'}}>
         {/* Page Header */}
 
-        <Row noGutters className="page-header py-4" style={{paddingLeft: '100px', paddingRight: '100px'}}>
-          <PageTitle sm="10" title="Playlist List" subtitle="Playlists" className="text-sm-left" />
+        <Row noGutters className="page-header py-4" >
+          <PageTitle title="Playlist List" subtitle="Playlists" className="text-sm-left col-md-6" />
                 
-                   <a href="/new-playlist" className="orange" ><p className="p-0 " style={{fontSize: 20}}><i class="material-icons" style={{fontSize: 25, top: '6px'}}>add</i> New Playlist</p>
-                     
-                    </a>
+         <a href="/new-playlist" className="orange col-md-6 text-right" ><p className="p-0 " style={{fontSize: 20}}><i class="material-icons" style={{fontSize: 25, top: '6px'}}>add</i> New Playlist</p>
+           
+          </a>
         <span className="w-100">
         <NavbarSearch/>        
         </span>
@@ -153,7 +153,7 @@ class Playlists extends React.Component {
         </Row>
 
         {/* First Row of Posts */}
-        <Row style={{paddingLeft: '100px', paddingRight: '100px'}}>
+        <Row >
         
           {PostsListOne.map((post, idx) => (
             <Col lg="4" md="6" sm="12" className="mb-4" key={idx}>

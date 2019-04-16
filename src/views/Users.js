@@ -123,8 +123,8 @@ class Users extends React.Component {
         {/* Page Header */}
         <div style={{paddingRight: '7%', paddingLeft: '7%'}}>
         <Row noGutters className="page-header py-4">
-          <PageTitle sm="10" title="Users List" subtitle="Users" className="text-sm-left" />       
-          <a href="/new-user" className="orange">
+          <PageTitle title="Users List" subtitle="Users" className="text-sm-left col-md-6" />       
+          <a href="/new-user" className="orange col-md-6 text-right">
             <p className="p-0" style={{fontSize: 20}}> 
               <i class="material-icons" style={{fontSize: 25, top: '6px'}}>add</i> New User 
             </p>
