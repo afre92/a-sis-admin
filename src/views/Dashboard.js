@@ -38,14 +38,12 @@ const Dashboard = ({ smallStats }) => (
 
     <Row>
       {/* Users Overview */}
-      <Col lg="8" md="12" sm="12" className="mb-4">
+      <Col lg="12" md="12" sm="12" className="mb-4">
         <UsersOverview />
       </Col>
 
       {/* Users by Device */}
-      <Col lg="4" md="6" sm="12" className="mb-4">
-        <UsersByDevice />
-      </Col>
+
 
       {/* New Draft */}
       <Col lg="4" md="6" sm="12" className="mb-4" style={{display: 'none'}}>
