@@ -121,8 +121,9 @@ class Users extends React.Component {
     return (
       <Container fluid className="main-content-container" >
         {/* Page Header */}
+        <div style={{paddingRight: '5%', paddingLeft: '7%'}}>
         <Row noGutters className="page-header py-4">
-          <PageTitle sm="9" title="Users List" subtitle="Users" className="text-sm-left" />       
+          <PageTitle sm="10" title="Users List" subtitle="Users" className="text-sm-left" />       
           <a href="/new-user" className="orange">
             <p className="p-0" style={{fontSize: 20}}> 
               <i class="material-icons" style={{fontSize: 25, top: '6px'}}>add</i> New User 
@@ -132,6 +133,7 @@ class Users extends React.Component {
             <NavbarSearch/>        
           </span>  
         </Row>
+        </div>
 
 
         {/* First Row of Posts */}
