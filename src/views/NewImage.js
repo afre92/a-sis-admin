@@ -64,6 +64,7 @@ class NewImage extends React.Component {
 
     return (
       <Container fluid className="main-content-container px-4">
+        <div style={{paddingLeft: '7%', paddingRight: '7%', height: '100%'}}>
         {/* Page Header */}
         <Row noGutters className="page-header py-4">
           <PageTitle sm="4" title="New Image" subtitle="Images" className="text-sm-left" />
@@ -71,7 +72,7 @@ class NewImage extends React.Component {
 
         {/* First Row of Posts */}
         <div style={{textAlign: 'center'}}>
-          <Col lg="4" style={{display: 'inline-block'}}>
+          <Col lg="5" style={{display: 'inline-block'}}>
             <Card small className="mb-4">
               <CardHeader className="border-bottom">
                 <h6 className="m-0"> Add Image</h6>
@@ -111,7 +112,7 @@ class NewImage extends React.Component {
           </Col>
         </div>
 
-
+        </div>
       </Container>
     );
   }

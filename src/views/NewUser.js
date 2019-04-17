@@ -23,6 +23,7 @@ import {
 import CustomFileUpload from "../components/components-overview/CustomFileUpload";
 import PageTitle from "../components/common/PageTitle";
 import Dropzone from 'react-dropzone';
+import CustomSelect from "../components/components-overview/CustomSelect";
 
 
 
@@ -47,7 +48,8 @@ class NewUser extends React.Component {
   render() {
 
     return (
-      <Container className="main-content-container" style={{paddingLeft: '7%', paddingRight: '7%', height: '100%'}}>
+      <Container fluid className="main-content-container" >
+      <div style={{paddingLeft: '7%', paddingRight: '7%', height: '100%'}}>
         {/* Page Header */}
         <Row noGutters className="page-header py-4">
           <PageTitle sm="4" title="New User" subtitle="Users" className="text-sm-left" />
@@ -101,6 +103,19 @@ class NewUser extends React.Component {
                         <Row form>
                           {/* First Name */}
                           <Col md="12" className="form-group">
+                            <label htmlFor="feFirstName">Subscription</label>
+
+                                <FormSelect>
+                                  <option>FREE</option>
+                                  <option>PREMIUM</option>
+                                </FormSelect>
+                              
+                          </Col>
+                          {/* Last Name */}
+                        </Row>
+                        <Row form>
+                          {/* First Name */}
+                          <Col md="12" className="form-group">
                             <label htmlFor="feFirstName">Password</label>
                             <FormInput
                               id="feFirstName"
@@ -126,7 +141,7 @@ class NewUser extends React.Component {
           </Col>
         </div>
 
-
+        </div>
       </Container>
     );
   }

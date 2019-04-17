@@ -159,7 +159,7 @@ class Playlists extends React.Component {
             <Col lg="4" md="6" sm="12" className="mb-4" key={idx}>
               <div style={{width: '100%', overflow: 'hidden'}}>
                 <span style={{float: 'right'}}>
-                  <a href="#" onClick={console.log('dlete')}> 
+                  <a href="/edit-playlist" onClick={console.log('dlete')}> 
                     <i class="material-icons" style={{fontSize: 25, paddingLeft: '10px'}}>edit</i>
                   </a>
                   <a href="#">

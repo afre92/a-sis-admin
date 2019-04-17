@@ -41,7 +41,7 @@ const baseStyle = {
   transition: 'border .24s ease-in-out'
 };
 
-class NewPlaylist extends React.Component {
+class EditPlaylist extends React.Component {
 
  
   constructor(props) {
@@ -64,10 +64,11 @@ class NewPlaylist extends React.Component {
   render() {
 
     return (
-      <Container fluid className="main-content-container" style={{paddingRight: '7%', paddingLeft: '7%'}}>
+      <Container fluid className="main-content-container px-4">
+        <div style={{paddingLeft: '7%', paddingRight: '7%', height: '100%'}}>
         {/* Page Header */}
         <Row noGutters className="page-header py-4">
-          <PageTitle sm="4" title="New Playlist" subtitle="Playlist" className="text-sm-left" />
+          <PageTitle sm="4" title="Edit Playlist" subtitle="Playlist" className="text-sm-left" />
         </Row>
 
         {/* First Row of Posts */}
@@ -75,7 +76,7 @@ class NewPlaylist extends React.Component {
           <Col lg="5" style={{display: 'inline-block'}}>
             <Card small className="mb-4">
               <CardHeader className="border-bottom">
-                <h6 className="m-0">Create Playlist</h6>
+                <h6 className="m-0">Edit Playlist</h6>
               </CardHeader>
               <ListGroup flush>
                 <ListGroupItem className="p-3">
@@ -87,6 +88,7 @@ class NewPlaylist extends React.Component {
                           <Col md="12" className="form-group">
                             <label htmlFor="feFirstName">Playlist Name</label>
                             <FormInput
+                              value="Calm"
                               id="feFirstName"
                               onChange={() => {}}
                             />
@@ -129,10 +131,10 @@ class NewPlaylist extends React.Component {
           </Col>
         </div>
 
-
+        </div>
       </Container>
     );
   }
 }
 
-export default NewPlaylist;
+export default EditPlaylist;

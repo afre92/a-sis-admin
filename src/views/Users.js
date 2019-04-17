@@ -130,7 +130,7 @@ class Users extends React.Component {
             </p>
           </a>
           <span className="w-100">
-            <NavbarSearch className="mr-4"/>        
+            <Button style={{float: 'right', marginLeft: '20px'}} theme="accent">Import to CSV</Button> <NavbarSearch className="mr-4"/> 
           </span>  
         </Row>
         </div>

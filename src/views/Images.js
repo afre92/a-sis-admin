@@ -69,9 +69,9 @@ class Images extends React.Component {
       <Container fluid className="main-content-container" style={{paddingLeft: '7%', paddingRight: '7%'}}>
         {/* Page Header */}
         <Row noGutters className="page-header py-4" >
-          <PageTitle sm="10" title="Images List" subtitle="Images" className="text-sm-left" />
+          <PageTitle title="Images List" subtitle="Images" className="text-sm-left col-md-6" />
                 
-           <a href="/new-image" className="orange">
+           <a href="/new-image" className="orange col-md-6 text-right">
             <p className="p-0" style={{fontSize: 20}}> 
               <i class="material-icons" style={{fontSize: 25, top: '6px'}}>add</i> New Image
               </p>

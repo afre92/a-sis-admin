@@ -19,6 +19,7 @@ import EditUser from "./views/EditUser";
 import ShowUser from "./views/ShowUser";
 import Images from "./views/Images";
 import NewImage from "./views/NewImage";
+import EditPlaylist from "./views/EditPlaylist";
 
 export default [
   {
@@ -71,6 +72,11 @@ export default [
     path: "/new-playlist",
     layout: DefaultLayout,
     component: NewPlaylist
+  },
+  {
+    path: "/edit-playlist",
+    layout: DefaultLayout,
+    component: EditPlaylist
   },
   {
     path: "/users",
