@@ -26,6 +26,7 @@ import UserDetails from "../components/user-profile-lite/UserDetails";
 import { FaEnvelope, FaInstagram, FaFacebook, FaTwitter } from 'react-icons/fa';
 import Pagination from "react-js-pagination";
 import NavbarSearch from "../components/layout/MainNavbar/NavbarSearch";
+import SmallStats from "./../components/common/SmallStats";
 
 
 class Users extends React.Component {
@@ -108,14 +109,74 @@ class Users extends React.Component {
           metaTitle: "Description",
           phoneNumber: "567.256.4563"
         }
+      ],
+      smallStats: [
+    {
+      label: "Comments",
+      value: "8,147",
+      percentage: "3.8%",
+      increase: false,
+      decrease: true,
+      chartLabels: [null, null, null, null, null, null, null],
+      attrs: { md: "4", sm: "6" },
+      datasets: [
+        {
+          label: "Today",
+          fill: "start",
+          borderWidth: 1.5,
+          backgroundColor: "rgba(255,180,0,0.1)",
+          borderColor: "rgb(255,180,0)",
+          data: [2, 3, 3, 3, 4, 3, 3]
+        }
       ]
-    };
+    },
+    {
+      label: "New Users",
+      value: "29",
+      percentage: "2.71%",
+      increase: true,
+      decrease: false,
+      chartLabels: [null, null, null, null, null, null, null],
+      attrs: { md: "4", sm: "6" },
+      datasets: [
+        {
+          label: "Today",
+          fill: "start",
+          borderWidth: 1.5,
+          backgroundColor: "rgba(255,65,105,0.1)",
+          borderColor: "rgb(255,65,105)",
+          data: [1, 7, 1, 3, 1, 4, 8]
+        }
+      ]
+    },
+    {
+      label: "Users",
+      value: "17,281",
+      percentage: "2.4%",
+      increase: true,
+      decrease: false,
+      chartLabels: [null, null, null, null, null, null, null],
+      attrs: { md: "4", sm: "6" },
+      datasets: [
+        {
+          label: "Today",
+          fill: "start",
+          borderWidth: 1.5,
+          backgroundColor: "rgb(0,123,255,0.1)",
+          borderColor: "rgb(0,123,255)",
+          data: [3, 2, 3, 2, 4, 5, 4]
+        }
+      ]
+    }
+  ]
+    }
   }
 
   render() {
 
     const {
       UserList,
+      smallStats,
     } = this.state;
 
     return (
@@ -134,6 +195,24 @@ class Users extends React.Component {
           </span>  
         </Row>
         </div>
+
+        <Row style={{paddingRight: '7%', paddingLeft: '7%', paddingTop: '30px', paddingBottom: '30px'}}>
+          {smallStats.map((stats, idx) => (
+            <Col className="col-lg mb-4" key={idx} {...stats.attrs}>
+              <SmallStats
+                id={`small-stats-${idx}`}
+                variation="1"
+                chartData={stats.datasets}
+                chartLabels={stats.chartLabels}
+                label={stats.label}
+                value={stats.value}
+                percentage={stats.percentage}
+                increase={stats.increase}
+                decrease={stats.decrease}
+              />
+            </Col>
+          ))}
+        </Row>
 
 
         {/* First Row of Posts */}

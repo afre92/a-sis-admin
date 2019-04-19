@@ -68,7 +68,6 @@ class NewUser extends React.Component {
                     <Col>
                       <Form style={{textAlign: 'left'}}>
                         <Row form>
-                          {/* First Name */}
                           <Col md="12" className="form-group">
                             <label htmlFor="feFirstName">First Name</label>
                             <FormInput
@@ -76,10 +75,8 @@ class NewUser extends React.Component {
                               onChange={() => {}}
                             />
                           </Col>
-                          {/* Last Name */}
                         </Row>
                         <Row form>
-                          {/* First Name */}
                           <Col md="12" className="form-group">
                             <label htmlFor="feFirstName">Last Name</label>
                             <FormInput
@@ -87,10 +84,8 @@ class NewUser extends React.Component {
                               onChange={() => {}}
                             />
                           </Col>
-                          {/* Last Name */}
                         </Row>
                         <Row form>
-                          {/* First Name */}
                           <Col md="12" className="form-group">
                             <label htmlFor="feFirstName">Email</label>
                             <FormInput
@@ -98,23 +93,8 @@ class NewUser extends React.Component {
                               onChange={() => {}}
                             />
                           </Col>
-                          {/* Last Name */}
                         </Row>
                         <Row form>
-                          {/* First Name */}
-                          <Col md="12" className="form-group">
-                            <label htmlFor="feFirstName">Subscription</label>
-
-                                <FormSelect>
-                                  <option>FREE</option>
-                                  <option>PREMIUM</option>
-                                </FormSelect>
-                              
-                          </Col>
-                          {/* Last Name */}
-                        </Row>
-                        <Row form>
-                          {/* First Name */}
                           <Col md="12" className="form-group">
                             <label htmlFor="feFirstName">Password</label>
                             <FormInput
@@ -122,7 +102,6 @@ class NewUser extends React.Component {
                               onChange={() => {}}
                             />
                           </Col>
-                          {/* Last Name */}
                         </Row>
                         <Row form>
                           <Col md="12" className="form-group">

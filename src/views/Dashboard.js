@@ -42,9 +42,6 @@ const Dashboard = ({ smallStats }) => (
         <UsersOverview />
       </Col>
 
-      {/* Users by Device */}
-
-
       {/* New Draft */}
       <Col lg="4" md="6" sm="12" className="mb-4" style={{display: 'none'}}>
         <NewDraft />
@@ -64,9 +61,6 @@ const Dashboard = ({ smallStats }) => (
 );
 
 Dashboard.propTypes = {
-  /**
-   * The small stats dataset.
-   */
   smallStats: PropTypes.array
 };
 
