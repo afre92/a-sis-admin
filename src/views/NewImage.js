@@ -8,19 +8,11 @@ import {
   ListGroupItem,
   Row,
   Form,
-  FormGroup,
-  FormInput,
   Col,
   Card,
-  CardBody,
-  CardFooter,
-  Badge,
   Button,
-  FormSelect,
-  FormTextarea,
 } from "shards-react";
 
-import CustomFileUpload from "../components/components-overview/CustomFileUpload";
 import PageTitle from "../components/common/PageTitle";
 import Dropzone from 'react-dropzone';
 
@@ -59,13 +51,11 @@ const styles = {
 
 
 class NewImage extends React.Component {
-
  
   constructor(props) {
     super(props);
 
     this.state = {
-      // First list of posts.
     };
   }
 
@@ -82,14 +72,13 @@ class NewImage extends React.Component {
 
     return (
       <Container fluid className="main-content-container px-4">
-        <div style={{paddingLeft: '7%', paddingRight: '7%', height: '100%'}}>
-        {/* Page Header */}
+        <div style={styles.mainContainer}>
+
         <Row noGutters className="page-header py-4">
           <PageTitle sm="4" title="New Image" subtitle="Images" className="text-sm-left" />
         </Row>
 
-        {/* First Row of Posts */}
-        <div style={{textAlign: 'center'}}>
+        <div className="text-center">
           <Col lg="5" style={{display: 'inline-block'}}>
             <Card small className="mb-4">
               <CardHeader className="border-bottom">
@@ -100,9 +89,7 @@ class NewImage extends React.Component {
                   <Row>
                     <Col>
                       <Form style={{textAlign: 'left'}}>
-
                         <Row form>
-                          {/* City */}
                           <Col md="12" className="form-group">
                             <label htmlFor="feFirstName">Uploader / Dropzone</label>
                             <Dropzone onDrop={this.onDrop} >
@@ -110,14 +97,12 @@ class NewImage extends React.Component {
                                 <div {...getRootProps()} style={styles.dropboxContainer}>
                                   <input {...getInputProps()} />
                                   <i class="material-icons" style={{fontSize: 30}}>cloud_upload</i>
-                                  <span style={{fontSize: 30, color: '#737373'}}>Drag & Drop </span>
-                                  <p className="m-0">your files, or <span style={{fontWeight: 'bold', color: '#0080ff', cursor:' pointer', textDecoration: 'underline' }}>browse</span></p>
+                                  <span style={styles.dropboxTitle}>Drag & Drop </span>
+                                  <p className="m-0">your files, or <span style={styles.dropboxLink}>browse</span></p>
                                 </div>
                               )}
                             </Dropzone>
-                        
                           </Col>
-
                         </Row>
                         <Button theme="accent">Save</Button>
                       </Form>
