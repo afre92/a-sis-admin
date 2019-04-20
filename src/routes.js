@@ -7,8 +7,6 @@ import { DefaultLayout } from "./layouts";
 // Route Views
 import Dashboard from "./views/Dashboard";
 import NewPlaylist from "./views/NewPlaylist";
-import UserProfile from "./views/UserProfileLite";
-import AddNewPost from "./views/AddNewPost";
 import Errors from "./views/Errors";
 import ComponentsOverview from "./views/ComponentsOverview";
 import Tables from "./views/Tables";

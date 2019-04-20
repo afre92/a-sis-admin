@@ -3,31 +3,56 @@
 import React from "react";
 import {
   Container,
-  CardHeader,
-  ListGroup,
-  ListGroupItem,
   Row,
-  Form,
-  FormGroup,
-  FormInput,
   Col,
   Card,
-  CardBody,
-  CardFooter,
-  Badge,
-  Button
+  CardBody
 } from "shards-react";
 
 import PageTitle from "../components/common/PageTitle";
 import NavbarSearch from "../components/layout/MainNavbar/NavbarSearch";
 
+const styles = {
+  mainContainer:  {
+    paddingLeft: '7%',
+    paddingRight: '7%'
+  },
+  newPlayslistBtn: {
+    fontSize: 25,
+    top: '6px'
+  },
+  actionsContainer: {
+    width: '100%',
+    overflow: 'hidden'
+  },
+  icons: {
+    fontSize: 25,
+    paddingLeft: '10px'
+  },
+  playlistName: {
+    fontSize: 'large',
+    paddingLeft: '20px'
+  },
+  trackDuration: {
+    textAlign: 'right', 
+    paddingRight: '20px', 
+    paddingTop: '20px', 
+    paddingBottom: '20px'
+  },
+  artistName: {
+    fontSize: 'smaller',
+    color: 'grey'
+  }
+};
+
+
 class Playlists extends React.Component {
+
   constructor(props) {
     super(props);
 
     this.state = {
-      // First list of posts.
-      PostsListOne: [
+      Playlists: [
         {
           backgroundImage: require("../images/content-management/1.jpeg"),
           category: "Calm",
@@ -131,74 +156,70 @@ class Playlists extends React.Component {
     };
   }
 
+
+
   render() {
     const {
-      PostsListOne,
+      Playlists,
     } = this.state;
 
     return (
-      <Container fluid className="main-content-container " style={{paddingLeft: '7%', paddingRight: '7%'}}>
-        {/* Page Header */}
-
+      <Container fluid className="main-content-container " style={styles.mainContainer}>
         <Row noGutters className="page-header py-4" >
-          <PageTitle title="Playlist List" subtitle="Playlists" className="text-sm-left col-md-6" />
-                
-         <a href="/new-playlist" className="orange col-md-6 text-right" ><p className="p-0 " style={{fontSize: 20}}><i class="material-icons" style={{fontSize: 25, top: '6px'}}>add</i> New Playlist</p>
-           
+          <PageTitle title="Playlist List" subtitle="Playlists" className="text-sm-left col-md-6" />   
+          <a href="/new-playlist" className="orange col-md-6 text-right" >
+            <p className="p-0 " style={{fontSize: 20}}>
+              <i class="material-icons" style={styles.newPlayslistBtn}>add</i>
+                 New Playlist
+              </p>
           </a>
-        <span className="w-100">
-        <NavbarSearch/>        
-        </span>
-
+          <span className="w-100">
+            <NavbarSearch/>        
+          </span>
         </Row>
 
-        {/* First Row of Posts */}
         <Row >
-        
-          {PostsListOne.map((post, idx) => (
+          {Playlists.map((post, idx) => (
             <Col lg="4" md="6" sm="12" className="mb-4" key={idx}>
-              <div style={{width: '100%', overflow: 'hidden'}}>
+              <div style={styles.actionsContainer}>
                 <span style={{float: 'right'}}>
-                  <a href="/edit-playlist" onClick={console.log('dlete')}> 
-                    <i class="material-icons" style={{fontSize: 25, paddingLeft: '10px'}}>edit</i>
+                  <a href="/edit-playlist" onClick={console.log('delete')}> 
+                    <i class="material-icons" style={styles.icons}>edit</i>
                   </a>
                   <a href="#">
-                    <i class="material-icons" style={{fontSize: 25, paddingLeft: '10px'}}>delete_forever</i>
+                    <i class="material-icons" style={styles.icons}>delete_forever</i>
                   </a>
                 </span>
               </div>
               <Card small className="card-post card-post--1">
                 <div
-                  className="card-post__image"
-                  style={{ backgroundImage: `url(${post.backgroundImage})` }}
+                className="card-post__image"
+                style={{ backgroundImage: `url(${post.backgroundImage})` }}
                 >
                 </div>
-          <CardBody className="p-0 mt-4">
+                <CardBody className="p-0 mt-4">
 
-            <p className="mb-3" style={{fontSize: 'large', paddingLeft: '20px'}}>{post.playlistName} </p>
-            <table className="table mb-0">
-              <tbody>
-              { Object.keys(post.body).map( (item, idx) => (
-
-                <tr key={idx}>
-                  <td style={{paddingLeft: '20px'}}>{post.body[item].trackName} <br/>
-                    <p className="p-0 m-0" style={{fontSize: 'smaller', color: 'grey'}}>{post.body[item].artistName}</p>
-                  </td>
-                  <td style={{flex: 2}}></td>
-                  <td></td>
-                  <td style={{textAlign: 'right', paddingRight: '20px', paddingTop: '20px', paddingBottom: '20px'}}>{post.body[item].trackDuration}</td>
-                </tr>
-              ))
-              }
-              </tbody>
-            </table>
-          </CardBody>
-              </Card>
-            </Col>
+                <p className="mb-3" style={styles.playlistName}>{post.playlistName}</p>
+                <table className="table mb-0">
+                  <tbody>
+                    { Object.keys(post.body).map( (item, idx) => (
+                      <tr key={idx}>
+                        <td style={{paddingLeft: '20px'}}>{post.body[item].trackName} <br/>
+                          <p className="p-0 m-0" style={styles.artistName}>{post.body[item].artistName}</p>
+                        </td>
+                        <td style={{flex: 2}}></td>
+                        <td></td>
+                        <td style={styles.trackDuration}>{post.body[item].trackDuration}</td>
+                      </tr>
+                    ))
+                  }
+                  </tbody>
+                </table>
+              </CardBody>
+            </Card>
+          </Col>
           ))}
         </Row>
-
-
       </Container>
     );
   }

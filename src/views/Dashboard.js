@@ -5,10 +5,6 @@ import { Container, Row, Col } from "shards-react";
 import PageTitle from "./../components/common/PageTitle";
 import SmallStats from "./../components/common/SmallStats";
 import UsersOverview from "./../components/blog/UsersOverview";
-import UsersByDevice from "./../components/blog/UsersByDevice";
-import NewDraft from "./../components/blog/NewDraft";
-import Discussions from "./../components/blog/Discussions";
-import TopReferrals from "./../components/common/TopReferrals";
 
 const Dashboard = ({ smallStats }) => (
   <Container className="main-content-container px-4" style={{paddingLeft: '7%', paddingRight: '7%', height: '100%'}}>
@@ -16,7 +12,6 @@ const Dashboard = ({ smallStats }) => (
     <Row noGutters className="page-header py-4">
       <PageTitle title="App Overview" subtitle="Dashboard" className="text-sm-left mb-3" />
     </Row>
-
     {/* Small Stats Blocks */}
     <Row>
       {smallStats.map((stats, idx) => (
@@ -40,21 +35,6 @@ const Dashboard = ({ smallStats }) => (
       {/* Users Overview */}
       <Col lg="12" md="12" sm="12" className="mb-4">
         <UsersOverview />
-      </Col>
-
-      {/* New Draft */}
-      <Col lg="4" md="6" sm="12" className="mb-4" style={{display: 'none'}}>
-        <NewDraft />
-      </Col>
-
-      {/* Discussions */}
-      <Col lg="5" md="12" sm="12" className="mb-4" style={{display: 'none'}}>
-        <Discussions />
-      </Col>
-
-      {/* Top Referrals */}
-      <Col lg="3" md="12" sm="12" className="mb-4" style={{display: 'none'}}>
-        <TopReferrals />
       </Col>
     </Row>
   </Container>

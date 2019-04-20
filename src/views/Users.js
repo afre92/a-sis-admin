@@ -7,31 +7,47 @@ import {
   ListGroup,
   ListGroupItem,
   Row,
-  Form,
-  FormGroup,
-  FormInput,
   Col,
   Card,
-  CardBody,
-  CardFooter,
-  Badge,
   Button,
-  FormSelect,
-  FormTextarea,
 } from "shards-react";
 
-import CustomFileUpload from "../components/components-overview/CustomFileUpload";
+
 import PageTitle from "../components/common/PageTitle";
-import UserDetails from "../components/user-profile-lite/UserDetails";
 import { FaEnvelope, FaInstagram, FaFacebook, FaTwitter } from 'react-icons/fa';
-import Pagination from "react-js-pagination";
 import NavbarSearch from "../components/layout/MainNavbar/NavbarSearch";
 import SmallStats from "./../components/common/SmallStats";
 
+const styles = {
+  mainContainer:  {
+    paddingLeft: '7%',
+    paddingRight: '7%'
+  },
+  importBtn: {
+    float: 'right',
+    marginLeft: '20px'
+  },
+  actionsContainer: {
+    textAlign: 'right',
+    paddingRight: '10px',
+    paddingTop: '5px'
+  },
+  actionIcons: {
+    fontSize: 25,
+    top: '6px'
+  },
+  userInfo: {
+    color: 'grey',
+    fontWeight: 200
+  },
+  icons: {
+    fontSize: 20,
+    color: '#ccc'
+  }
+};
+
 
 class Users extends React.Component {
-
- 
   constructor(props) {
     super(props);
 
@@ -111,64 +127,64 @@ class Users extends React.Component {
         }
       ],
       smallStats: [
-    {
-      label: "Comments",
-      value: "8,147",
-      percentage: "3.8%",
-      increase: false,
-      decrease: true,
-      chartLabels: [null, null, null, null, null, null, null],
-      attrs: { md: "4", sm: "6" },
-      datasets: [
         {
-          label: "Today",
-          fill: "start",
-          borderWidth: 1.5,
-          backgroundColor: "rgba(255,180,0,0.1)",
-          borderColor: "rgb(255,180,0)",
-          data: [2, 3, 3, 3, 4, 3, 3]
+          label: "Comments",
+          value: "8,147",
+          percentage: "3.8%",
+          increase: false,
+          decrease: true,
+          chartLabels: [null, null, null, null, null, null, null],
+          attrs: { md: "4", sm: "6" },
+          datasets: [
+            {
+              label: "Today",
+              fill: "start",
+              borderWidth: 1.5,
+              backgroundColor: "rgba(255,180,0,0.1)",
+              borderColor: "rgb(255,180,0)",
+              data: [2, 3, 3, 3, 4, 3, 3]
+            }
+          ]
+        },
+        {
+          label: "New Users",
+          value: "29",
+          percentage: "2.71%",
+          increase: true,
+          decrease: false,
+          chartLabels: [null, null, null, null, null, null, null],
+          attrs: { md: "4", sm: "6" },
+          datasets: [
+            {
+              label: "Today",
+              fill: "start",
+              borderWidth: 1.5,
+              backgroundColor: "rgba(255,65,105,0.1)",
+              borderColor: "rgb(255,65,105)",
+              data: [1, 7, 1, 3, 1, 4, 8]
+            }
+          ]
+        },
+        {
+          label: "Users",
+          value: "17,281",
+          percentage: "2.4%",
+          increase: true,
+          decrease: false,
+          chartLabels: [null, null, null, null, null, null, null],
+          attrs: { md: "4", sm: "6" },
+          datasets: [
+            {
+              label: "Today",
+              fill: "start",
+              borderWidth: 1.5,
+              backgroundColor: "rgb(0,123,255,0.1)",
+              borderColor: "rgb(0,123,255)",
+              data: [3, 2, 3, 2, 4, 5, 4]
+            }
+          ]
         }
       ]
-    },
-    {
-      label: "New Users",
-      value: "29",
-      percentage: "2.71%",
-      increase: true,
-      decrease: false,
-      chartLabels: [null, null, null, null, null, null, null],
-      attrs: { md: "4", sm: "6" },
-      datasets: [
-        {
-          label: "Today",
-          fill: "start",
-          borderWidth: 1.5,
-          backgroundColor: "rgba(255,65,105,0.1)",
-          borderColor: "rgb(255,65,105)",
-          data: [1, 7, 1, 3, 1, 4, 8]
-        }
-      ]
-    },
-    {
-      label: "Users",
-      value: "17,281",
-      percentage: "2.4%",
-      increase: true,
-      decrease: false,
-      chartLabels: [null, null, null, null, null, null, null],
-      attrs: { md: "4", sm: "6" },
-      datasets: [
-        {
-          label: "Today",
-          fill: "start",
-          borderWidth: 1.5,
-          backgroundColor: "rgb(0,123,255,0.1)",
-          borderColor: "rgb(0,123,255)",
-          data: [3, 2, 3, 2, 4, 5, 4]
-        }
-      ]
-    }
-  ]
     }
   }
 
@@ -181,22 +197,22 @@ class Users extends React.Component {
 
     return (
       <Container fluid className="main-content-container" >
-        {/* Page Header */}
-        <div style={{paddingRight: '7%', paddingLeft: '7%'}}>
-        <Row noGutters className="page-header py-4">
-          <PageTitle title="Users List" subtitle="Users" className="text-sm-left col-md-6" />       
-          <a href="/new-user" className="orange col-md-6 text-right">
-            <p className="p-0" style={{fontSize: 20}}> 
-              <i class="material-icons" style={{fontSize: 25, top: '6px'}}>add</i> New User 
-            </p>
-          </a>
-          <span className="w-100">
-            <Button style={{float: 'right', marginLeft: '20px'}} theme="accent">Import to CSV</Button> <NavbarSearch className="mr-4"/> 
-          </span>  
-        </Row>
+        <div style={styles.mainContainer}>
+          <Row noGutters className="page-header py-4">
+            <PageTitle title="Users List" subtitle="Users" className="text-sm-left col-md-6" />       
+            <a href="/new-user" className="orange col-md-6 text-right">
+              <p className="p-0" style={{fontSize: 20}}> 
+                <i class="material-icons" style={{fontSize: 25, top: '6px'}}>add</i> New User 
+              </p>
+            </a>
+            <span className="w-100">
+              <Button style={styles.importBtn} theme="accent">Import to CSV</Button> 
+              <NavbarSearch className="mr-4"/> 
+            </span>  
+          </Row>
         </div>
 
-        <Row style={{paddingRight: '7%', paddingLeft: '7%', paddingTop: '30px', paddingBottom: '30px'}}>
+        <Row className="py-5" style={styles.mainContainer}>
           {smallStats.map((stats, idx) => (
             <Col className="col-lg mb-4" key={idx} {...stats.attrs}>
               <SmallStats
@@ -214,9 +230,7 @@ class Users extends React.Component {
           ))}
         </Row>
 
-
-        {/* First Row of Posts */}
-        <div style={{textAlign: 'center'}}>
+        <div className="text-center">
         {UserList.map((user, idx) => (
           <Card small className="mb-4 pl-2 pr-2 col-md-5 m-3" style={{display: 'inline-block'}}>
             <CardHeader className="border-bottom text-center p-0">
@@ -232,21 +246,21 @@ class Users extends React.Component {
               </div>
               </Col>
               <Col md="9" sm="12" className=" pb-2">
-                <div style={{textAlign: 'right', paddingRight: '10px', paddingTop: '5px'}}>
+                <div style={styles.actionsContainer}>
                   <a href="/edit-user" style={{paddingRight: '10px'}}>
-                    <i class="material-icons" style={{fontSize: 25, top: '6px'}}>edit</i>
+                    <i class="material-icons" style={styles.actionIcons}>edit</i>
                   </a>
                   <a href="#">
-                    <i class="material-icons" style={{fontSize: 25, top: '6px'}}>delete_forever</i>
+                    <i class="material-icons" style={styles.actionIcons}>delete_forever</i>
                   </a>
                 </div>
                 <Row style={{fontSize: 'larger', fontWeight: 'bold'}}>
                   <a href="/user" style={{color: '#3D5170'}}>{user.name}</a>
                 </Row>
-                <Row style={{color: 'grey', fontWeight: 200}}>
+                <Row style={styles.userInfo}>
                   {user.jobTitle}
                 </Row>
-                <Row style={{color: 'grey', fontWeight: 200}}>
+                <Row style={styles.userInfo}>
                   Mobile: {user.phoneNumber}
                 </Row>
               </Col>
@@ -257,16 +271,16 @@ class Users extends React.Component {
                 <div style={{textAlign: 'center'}}>
                 <Row>
                   <Col className="py-2">
-                    <a href="#"><FaInstagram style={{fontSize: 20, color: '#ccc'}}/></a>
+                    <a href="#"><FaInstagram style={styles.icons}/></a>
                   </Col>
                   <Col className="py-2">
-                    <a href="#"><FaFacebook style={{fontSize: 20, color: '#ccc'}}/></a>
+                    <a href="#"><FaFacebook style={styles.icons}/></a>
                   </Col>
                   <Col className="py-2">
-                    <a href="#"><FaTwitter style={{fontSize: 20, color: '#ccc'}}/></a>
+                    <a href="#"><FaTwitter style={styles.icons}/></a>
                   </Col>
                   <Col className="py-2">
-                    <a href="#"><FaEnvelope style={{fontSize: 20, color: '#ccc'}}/></a>
+                    <a href="#"><FaEnvelope style={styles.icons}/></a>
                   </Col>
                 </Row>
                 </div>
@@ -275,8 +289,6 @@ class Users extends React.Component {
           </Card>
         ))}
         </div>
-
-
       </Container>
     );
   }

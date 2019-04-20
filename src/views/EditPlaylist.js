@@ -8,37 +8,47 @@ import {
   ListGroupItem,
   Row,
   Form,
-  FormGroup,
   FormInput,
   Col,
   Card,
-  CardBody,
-  CardFooter,
-  Badge,
   Button,
-  FormSelect,
-  FormTextarea,
 } from "shards-react";
 
 import CustomFileUpload from "../components/components-overview/CustomFileUpload";
 import PageTitle from "../components/common/PageTitle";
 import Dropzone from 'react-dropzone';
 
-const baseStyle = {
-  flex: 1,
-  display: 'flex',
-  flexDirection: 'column',
-  alignItems: 'center',
-  paddingTop: '60px',
-  paddingBottom: '80px',
-  borderWidth: 2,
-  borderRadius: 2,
-  borderColor: '#b3d9ff',
-  borderStyle: 'dashed',
-  backgroundColor: '#e6f2ff',
-  color: '#4da6ff',
-  outline: 'none',
-  transition: 'border .24s ease-in-out'
+const styles = {
+  mainContainer:  {
+    paddingLeft: '7%',
+    paddingRight: '7%'
+  },
+  dropboxContainer: {
+    flex: 1,
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    paddingTop: '60px',
+    paddingBottom: '80px',
+    borderWidth: 2,
+    borderRadius: 2,
+    borderColor: '#b3d9ff',
+    borderStyle: 'dashed',
+    backgroundColor: '#e6f2ff',
+    color: '#4da6ff',
+    outline: 'none',
+    transition: 'border .24s ease-in-out'
+  },
+  dropboxTitle: {
+    fontSize: 30,
+    color: '#737373'
+  },
+  dropboxLink: {
+    fontWeight: 'bold',
+    color: '#0080ff',
+    cursor:' pointer',
+    textDecoration: 'underline'
+  }
 };
 
 class EditPlaylist extends React.Component {
@@ -65,14 +75,13 @@ class EditPlaylist extends React.Component {
 
     return (
       <Container fluid className="main-content-container px-4">
-        <div style={{paddingLeft: '7%', paddingRight: '7%', height: '100%'}}>
+        <div style={styles.mainContainer}>
         {/* Page Header */}
         <Row noGutters className="page-header py-4">
           <PageTitle sm="4" title="Edit Playlist" subtitle="Playlist" className="text-sm-left" />
         </Row>
 
-        {/* First Row of Posts */}
-        <div style={{textAlign: 'center'}}>
+        <div className="text-center">
           <Col lg="5" style={{display: 'inline-block'}}>
             <Card small className="mb-4">
               <CardHeader className="border-bottom">
@@ -82,43 +91,39 @@ class EditPlaylist extends React.Component {
                 <ListGroupItem className="p-3">
                   <Row>
                     <Col>
-                      <Form style={{textAlign: 'left'}}>
+                      <Form className="text-left">
                         <Row form>
-                          {/* First Name */}
                           <Col md="12" className="form-group">
-                            <label htmlFor="feFirstName">Playlist Name</label>
+                            <label htmlFor="playlistName">Playlist Name</label>
                             <FormInput
                               value="Calm"
-                              id="feFirstName"
+                              id="playlistName"
                               onChange={() => {}}
                             />
                           </Col>
-                          {/* Last Name */}
                         </Row>
                         <Row form>
                           <Col md="12" className="form-group">
-                           <label htmlFor="feFirstName">Playlist Image</label>
+                           <label htmlFor="plalistImage">Playlist Image</label>
                             <CustomFileUpload />
                           </Col>
                         </Row>
 
                         <Row form>
-                          {/* City */}
                           <Col md="12" className="form-group">
                             <label htmlFor="feFirstName">Playlist Files</label>
                             <Dropzone onDrop={this.onDrop} >
                               {({getRootProps, getInputProps}) => (
-                                <div {...getRootProps()} style={baseStyle}>
+                                <div {...getRootProps()} style={styles.dropboxContainer}>
                                   <input {...getInputProps()} />
                                   <i class="material-icons" style={{fontSize: 30}}>cloud_upload</i>
-                                  <span style={{fontSize: 30, color: '#737373'}}>Drag & Drop </span>
-                                  <p className="m-0">your files, or <span style={{fontWeight: 'bold', color: '#0080ff', cursor:' pointer', textDecoration: 'underline' }}>browse</span></p>
+                                  <span style={styles.dropboxTitle}>Drag & Drop </span>
+                                  <p className="m-0">your files, or <span style={styles.dropboxLink}>browse</span></p>
                                 </div>
                               )}
                             </Dropzone>
                         
                           </Col>
-
                         </Row>
                         <Button theme="accent">Save</Button>
                       </Form>
