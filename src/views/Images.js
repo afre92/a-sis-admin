@@ -3,31 +3,31 @@
 import React from "react";
 import {
   Container,
-  CardHeader,
-  ListGroup,
-  ListGroupItem,
   Row,
-  Form,
-  FormGroup,
-  FormInput,
   Col,
   Card,
-  CardBody,
-  CardFooter,
   Badge,
-  Button
 } from "shards-react";
 
 import PageTitle from "../components/common/PageTitle";
 import NavbarSearch from "../components/layout/MainNavbar/NavbarSearch";
+
+const styles = {
+  mainContainer:  {
+    paddingLeft: '7%',
+    paddingRight: '7%'
+  },
+  icons: {
+    fontSize: 22
+  }
+};
 
 class Images extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      // First list of posts.
-      PostsListOne: [
+      ImageList: [
         {
           backgroundImage: require("../images/content-management/8.jpeg"),
         },
@@ -62,20 +62,19 @@ class Images extends React.Component {
 
   render() {
     const {
-      PostsListOne,
+      ImageList,
     } = this.state;
 
     return (
-      <Container fluid className="main-content-container" style={{paddingLeft: '7%', paddingRight: '7%'}}>
-        {/* Page Header */}
+      <Container fluid className="main-content-container" style={styles.mainContainer}>
+
         <Row noGutters className="page-header py-4" >
           <PageTitle title="Images List" subtitle="Images" className="text-sm-left col-md-6" />
-                
            <a href="/new-image" className="orange col-md-6 text-right">
             <p className="p-0" style={{fontSize: 20}}> 
-              <i class="material-icons" style={{fontSize: 25, top: '6px'}}>add</i> New Image
+              <i class="material-icons" style={{fontSize: 25, top: '6px'}}>add</i>
+              New Image
               </p>
-             
             </a>
 
           <span className="w-100">
@@ -84,17 +83,16 @@ class Images extends React.Component {
                 
         </Row>
 
-        {/* First Row of Posts */}
         <Row>
-          {PostsListOne.map((post, idx) => (
+          {ImageList.map((post, idx) => (
             <Col lg="4" md="6" sm="12" className="mb-4" key={idx}>
               <div style={{width: '100%', overflow: 'hidden'}}>
               <span style={{float: 'right'}}>
-                <a href="#" onClick={console.log('dlete')} > 
-                  <i class="material-icons" style={{fontSize: 22}}>edit</i>
+                <a href="#" onClick={console.log('delete')} > 
+                  <i class="material-icons" style={styles.icons}>edit</i>
                 </a>
                 <a href="#" style={{paddingLeft: '10px'}}>
-                  <i class="material-icons" style={{fontSize: 22}}>delete_forever</i>
+                  <i class="material-icons" style={styles.icons}>delete_forever</i>
                 </a>
               </span>
               </div>

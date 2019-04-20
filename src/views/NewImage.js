@@ -24,22 +24,40 @@ import CustomFileUpload from "../components/components-overview/CustomFileUpload
 import PageTitle from "../components/common/PageTitle";
 import Dropzone from 'react-dropzone';
 
-const baseStyle = {
-  flex: 1,
-  display: 'flex',
-  flexDirection: 'column',
-  alignItems: 'center',
-  paddingTop: '60px',
-  paddingBottom: '80px',
-  borderWidth: 2,
-  borderRadius: 2,
-  borderColor: '#b3d9ff',
-  borderStyle: 'dashed',
-  backgroundColor: '#e6f2ff',
-  color: '#4da6ff',
-  outline: 'none',
-  transition: 'border .24s ease-in-out'
+const styles = {
+  mainContainer:  {
+    paddingLeft: '7%',
+    paddingRight: '7%'
+  },
+  dropboxContainer: {
+    flex: 1,
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    paddingTop: '60px',
+    paddingBottom: '80px',
+    borderWidth: 2,
+    borderRadius: 2,
+    borderColor: '#b3d9ff',
+    borderStyle: 'dashed',
+    backgroundColor: '#e6f2ff',
+    color: '#4da6ff',
+    outline: 'none',
+    transition: 'border .24s ease-in-out'
+  },
+  dropboxTitle: {
+    fontSize: 30,
+    color: '#737373'
+  },
+  dropboxLink: {
+    fontWeight: 'bold',
+    color: '#0080ff',
+    cursor:' pointer',
+    textDecoration: 'underline'
+  }
 };
+
+
 class NewImage extends React.Component {
 
  
@@ -89,7 +107,7 @@ class NewImage extends React.Component {
                             <label htmlFor="feFirstName">Uploader / Dropzone</label>
                             <Dropzone onDrop={this.onDrop} >
                               {({getRootProps, getInputProps}) => (
-                                <div {...getRootProps()} style={baseStyle}>
+                                <div {...getRootProps()} style={styles.dropboxContainer}>
                                   <input {...getInputProps()} />
                                   <i class="material-icons" style={{fontSize: 30}}>cloud_upload</i>
                                   <span style={{fontSize: 30, color: '#737373'}}>Drag & Drop </span>
